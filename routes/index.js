@@ -5,7 +5,7 @@ var login = require('../lib/login');
 module.exports = function(app) {
   app.get('/', function(req, res){
     login(function(data){
-      res.render('index', {data: data.nav});
+      res.render('login', {data: data.nav});
     })
   });
 };
