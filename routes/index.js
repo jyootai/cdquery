@@ -8,5 +8,10 @@ module.exports = function(app) {
       res.render('login', {data: data.nav});
     })
   });
+
+  app.post('/login', function(req, res){
+    var account = req.body.account;
+    res.send(account);
+  })
 };
 
