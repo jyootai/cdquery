@@ -4,14 +4,16 @@ var login = require('../lib/login');
 
 module.exports = function(app) {
   app.get('/', function(req, res){
-    login(function(data){
-      res.render('login', {data: data.nav});
-    })
+  res.render('login');
   });
 
   app.post('/login', function(req, res){
     var account = req.body.account;
-    res.send(account);
-  })
+    var psw = req.body.password;
+    login(account, psw,function(data){
+      console.log(account, psw);
+      res.render('index', {data: data.nav});
+    });
+  });
 };
 
