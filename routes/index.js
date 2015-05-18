@@ -4,7 +4,7 @@ var login = require('../lib/login');
 
 module.exports = function(app) {
   app.get('/', function(req, res){
-  res.render('login');
+  res.render('login',{layout:false});
   });
 
   app.post('/login', function(req, res){
@@ -15,7 +15,7 @@ module.exports = function(app) {
       res.render('index', {data: data.nav});
         
       } else {
-        res.render('login', { error: data.err });
+        res.render('login',{error: data.err,layout:false});
       }
     });
   });

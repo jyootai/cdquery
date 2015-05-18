@@ -1,26 +1,34 @@
-<div class="container">
-	<div class="row">
-		<div class="login-box">
-			<h2>登录你的账户</h2>
-       <% if(typeof(error) !== 'undefined' && error){ %>
-         <div class="alert alert-danger">
-           <a class="close" data-dismiss="alert" href="#">&times;</a>
-           <strong><%= error %></strong>
-         </div>
-       <% } %>
-			<form action="/login" method="post" />
-				<fieldset>
-					<input class="input-large" name="account" id="username" type="text" placeholder="请输入你的12位学号" />
-					<input class="input-large" name="password" id="password" type="password" placeholder="请输入你的密码" />
-					<div class="clearfix"></div>
-          <a  href="/" class="glyphicon glyphicon-home" id="homeicon"></a>   
- 					<label class="remember" for="remember"><input type="checkbox" id="remember" />记住我</label>
-					<div class="clearfix"></div>
-							
-					<button type="submit" class="btn btn-primary span12">登录</button>
-				</fieldset>	
-			</form>
-			<hr />
-		</div>
-	</div>
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ./partials/head %>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="login-box">
+          <h2>登录你的账户</h2>
+           <% if(typeof(error) !== 'undefined' && error){ %>
+             <div class="alert alert-danger">
+               <a class="close" data-dismiss="alert" href="#">&times;</a>
+               <strong><%= error %></strong>
+             </div>
+           <% } %>
+          <form action="/login" method="post" />
+            <fieldset>
+              <input class="input-large" name="account" id="username" type="text" placeholder="请输入你的12位学号" />
+              <input class="input-large" name="password" id="password" type="password" placeholder="请输入你的密码" />
+              <div class="clearfix"></div>
+              <a  href="/" class="glyphicon glyphicon-home" id="homeicon"></a>   
+              <label class="remember" for="remember"><input type="checkbox" id="remember" />记住我</label>
+              <div class="clearfix"></div>
+                  
+              <button type="submit" class="btn btn-primary span12">登录</button>
+            </fieldset>	
+          </form>
+          <hr />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
