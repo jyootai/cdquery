@@ -11,8 +11,12 @@ module.exports = function(app) {
     var account = req.body.account;
     var psw = req.body.password;
     login(account, psw,function(data){
-      console.log(account, psw);
+      if (data.err === null ) {
       res.render('index', {data: data.nav});
+        
+      } else {
+        res.render('login', { error: data.err });
+      }
     });
   });
 };

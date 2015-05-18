@@ -1,3 +1,9 @@
+<% if(typeof(error) !== 'undefined' && error){ %>
+<div class="alert alert-error">
+  <a class="close" data-dismiss="alert" href="#">&times;</a>
+  <strong><%= error %></strong>
+</div>
+<% } %>
 <form method="post" action="/login" >
   <div class="form-group">
     <label for="Student ID">学号</label>
