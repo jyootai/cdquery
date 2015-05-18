@@ -1,0 +1,41 @@
+body{
+  background:#383e4b;
+  color:#383e4b;
+  border:0;
+  font-family:'Lato',sans-serif;
+  font-weight:400}
+.login-box{
+  width:300px;
+  padding:20px;
+  margin:100px auto;
+  background:#fff;
+  border-radius:2px}
+.login-box input[type="text"],.login-box input[type="password"]{
+  border:0;
+  background: #383e4b;
+  border-radius:2px;
+  padding:0 10px;
+  height:40px;
+  width:100%;
+  margin:5px auto}
+.login-box button{
+  margin:15px 0!important}
+.login-box .remember{
+  margin-top:20px;
+  float:left}
+h2 {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 300;
+}
+.login-box .btn{
+  border:0;}
+.login-box .btn-primary{
+  color:#fff;
+  width:100%;
+  background: #36a9e1;}
+.login-box #homeicon {
+  color: #383e4b;
+  margin-top: 20px;
+  float:right;
+}
