@@ -12,7 +12,7 @@ module.exports = function(app) {
     var psw = req.body.password;
     login(account, psw,function(data){
       if (data.err === null ) {
-        res.render('index', {data: data.nav});
+        res.render('index', {data: data});
         
       } else {
         res.render('login',{error: data.err,layout:false});
