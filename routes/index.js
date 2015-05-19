@@ -10,10 +10,9 @@ module.exports = function(app) {
   app.post('/login', function(req, res){
     var account = req.body.account;
     var psw = req.body.password;
-    login(account, psw,function(data){
+    login(account, psw,function(data,html){
       if (data.err === null ) {
-        res.render('index', {data: data});
-        
+        res.render('index', {data: data, ht: html});
       } else {
         res.render('login',{error: data.err,layout:false});
       }
