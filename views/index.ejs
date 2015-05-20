@@ -1,5 +1,11 @@
 <div class="content">
   <div class="container">
+     <% if (warning){ %>
+       <div class="alert alert-warning">
+         <a class="close" data-dismiss="alert" href="#">&times;</a>
+         <strong><%= warning %></strong>
+       </div>
+     <% } %>
     <p><%- ht%></p>
   </div>
 </div>

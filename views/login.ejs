@@ -9,10 +9,16 @@
         <div class="row">
           <div class="login-box">
             <h2>登录你的账户</h2>
-             <% if (messages){ %>
+             <% if (error){ %>
                <div class="alert alert-danger">
                  <a class="close" data-dismiss="alert" href="#">&times;</a>
-                 <strong><%= messages %></strong>
+                 <strong><%= error %></strong>
+               </div>
+             <% } %>
+             <% if (success){ %>
+               <div class="alert alert-success">
+                 <a class="close" data-dismiss="alert" href="#">&times;</a>
+                 <strong><%= success %></strong>
                </div>
              <% } %>
             <form action="/login" method="post" />
