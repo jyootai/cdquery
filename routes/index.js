@@ -15,13 +15,24 @@ module.exports = function(app) {
       my_data = data;
       my_html = html;
       if (data.err === null ) {
-        res.render('index', {data: my_data, ht: my_html.info});
+        res.redirect('/index');
       } else {
         req.flash('error',my_data.err); 
         res.redirect('/');
       }
     });
   });
+
+  app.get('/index', checkLogin);
+  app.get('/index', function(req, res){
+    if (my_data.err === null ) {
+      res.render('index', {data: my_data, ht: my_html.info});
+    } else {
+      req.flash('error', '操作过时，请重新登录'); 
+      res.redirect('/');
+    }
+  });
+
   app.get('/info', checkLogin);
   app.get('/info', function(req, res){
     if (my_data.err === null ) {
@@ -31,6 +42,7 @@ module.exports = function(app) {
       res.redirect('/');
     }
   });
+
   app.get('/score', checkLogin);
   app.get('/score', function(req, res){
     if (my_data.err === null ) {
@@ -40,6 +52,7 @@ module.exports = function(app) {
       res.redirect('/');
     }
   });
+
   app.get('/syllabus', checkLogin);
   app.get('/syllabus', function(req, res){
     if (my_data.err === null ) {
