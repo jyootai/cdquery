@@ -17,15 +17,18 @@ module.exports = function(app) {
       if (data.err === null ) {
         res.render('index', {data: my_data, ht: my_html.info});
       } else {
-        res.render('login',{error: my_data.err,layout:false});
+        req.flash('error',my_data.err); 
+        res.redirect('/');
       }
     });
   });
+  app.get('/info', checkLogin);
   app.get('/info', function(req, res){
     if (my_data.err === null ) {
       res.render('index', {data: my_data, ht: my_html.info});
     } else {
-      res.render('login',{error: "操作过时，请重新登录",layout:false});
+      req.flash('error', '操作过时，请重新登录'); 
+      res.redirect('/');
     }
   });
   app.get('/score', checkLogin);
@@ -33,14 +36,17 @@ module.exports = function(app) {
     if (my_data.err === null ) {
       res.render('index', {data: my_data, ht: my_html.score});
     } else {
-      res.render('login',{error: "操作过时，请重新登录",layout:false});
+      req.flash('error', '操作过时，请重新登录'); 
+      res.redirect('/');
     }
   });
+  app.get('/syllabus', checkLogin);
   app.get('/syllabus', function(req, res){
     if (my_data.err === null ) {
       res.render('index', {data: my_data, ht: my_html.syllabus});
     } else {
-      res.render('login',{error: "操作过时，请重新登录",layout:false});
+      req.flash('error', '操作过时，请重新登录'); 
+      res.redirect('/');
     }
   });
 
