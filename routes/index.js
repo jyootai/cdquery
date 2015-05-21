@@ -3,11 +3,16 @@ var express = require('express'),
     login = require('../lib/login');
 
 module.exports = function(app) {
-  app.get('/', checkNotLogin);
   app.get('/', function(req, res){
-    res.render('login',{error: req.flash('error').toString(),
+    if (req.session.data) {
+      req.flash('warning', null); 
+      req.flash('warning', '你已经登录！'); 
+      res.redirect('/index');
+    } else {
+      res.render('login',{error: req.flash('error').toString(),
                         success: req.flash('success').toString(),
                         layout:false});
+    }
   });
 
   app.post('/login', function(req, res){
@@ -67,14 +72,6 @@ module.exports = function(app) {
       req.flash('error', null); 
       req.flash('error', '请先登录'); 
       res.redirect('/');
-    }
-    next();
-  }
-
-  function checkNotLogin(req, res, next) {
-    if (req.session.data) {
-      req.flash('warning', '你已经登录！'); 
-      res.redirect('/index');
     }
     next();
   }
