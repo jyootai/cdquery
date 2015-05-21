@@ -1,11 +1,11 @@
 var express = require('express');
-var path = require('path');
-var partials = require('express-partials');
-var bodyParser = require('body-parser')
-var routes = require('./routes/index');
-var flash = require('connect-flash');
-var cookieParser = require('cookie-parser');
-var session = require('express-session');
+    path = require('path');
+    partials = require('express-partials'),
+    bodyParser = require('body-parser'),
+    routes = require('./routes/index'),
+    flash = require('connect-flash'),
+    cookieParser = require('cookie-parser'),
+    session = require('express-session');
 
 var app = express();
 

@@ -37,8 +37,7 @@ module.exports = function(app) {
     res.redirect('/');//登出成功后跳转到主页
   });
 
-  app.get('/index', checkLogin);
-  app.get('/index', function(req, res){
+  app.get('/index', checkLogin, function(req, res){
     var data = req.session.data,
         html = req.session.html;
     res.render('index', {data: data, 
@@ -46,22 +45,19 @@ module.exports = function(app) {
                          warning: req.flash('warning').toString()});
   });
 
-  app.get('/info', checkLogin);
-  app.get('/info', function(req, res){
+  app.get('/info', checkLogin, function(req, res){
     var data = req.session.data,
         html = req.session.html;
     res.render('info', {data: data, ht: html});
   });
 
-  app.get('/score', checkLogin);
-  app.get('/score', function(req, res){
+  app.get('/score', checkLogin, function(req, res){
     var data = req.session.data,
         html = req.session.html;
     res.render('score', {data: data, ht: html});
   });
 
-  app.get('/syllabus', checkLogin);
-  app.get('/syllabus', function(req, res){
+  app.get('/syllabus', checkLogin, function(req, res){
     var data = req.session.data,
         html = req.session.html;
     res.render('syllabus', {data: data, ht: html});
@@ -71,7 +67,7 @@ module.exports = function(app) {
     if (!req.session.data) {
       req.flash('error', null); 
       req.flash('error', '请先登录'); 
-      res.redirect('/');
+      return res.redirect('/');
     }
     next();
   }
