@@ -14,8 +14,7 @@ app.set('view engine', 'ejs');
 app.use(cookieParser());
 app.use(session({secret: 'cdquery',
                 resave: true,
-                saveUninitialized: true, 
-                cookie: { maxAge: 60000 }
+                saveUninitialized: true
                 }));
 app.use(flash());
 app.use(partials());
