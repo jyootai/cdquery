@@ -19,7 +19,7 @@ $ npm install
 
 $ node app.js
 ```
-访问[localhost:3000](localhost:3000)
+访问[http://localhost:3000](http://localhost:3000)
 
 ## 参与
 
