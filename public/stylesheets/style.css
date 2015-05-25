@@ -5,6 +5,8 @@ body{
   border:0;
   font-family:'Lato',sans-serif;
   font-weight:400}
+.login-body{
+  background:#383e4b;}
 .login-page{
   background:#383e4b;}
 .login-box{
