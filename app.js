@@ -1,5 +1,5 @@
-var express = require('express');
-    path = require('path');
+var express = require('express'),
+    path = require('path'),
     partials = require('express-partials'),
     bodyParser = require('body-parser'),
     routes = require('./routes/index'),
