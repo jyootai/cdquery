@@ -19,7 +19,6 @@
     "express-partials": "^0.3.0",
     "express-session": "^1.11.2",
     "iconv-lite": "^0.4.8",
-    "request": "^2.55.0",
-    "supervisor": "^0.6.0"
+    "request": "^2.55.0"
   }
 }
