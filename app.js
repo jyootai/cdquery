@@ -18,9 +18,7 @@ app.use(session({secret: 'cdquery',
                 }));
 app.use(flash());
 app.use(partials());
-//加载解析json的中间件
 app.use(bodyParser.json());
-//加载解析urlencoded请求体的中间件
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
